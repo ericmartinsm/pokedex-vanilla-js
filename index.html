@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokedex</title>
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+
+<body>
+  <header>
+    <!-- <h1>Pokedex</h1> -->
+    <img src="./assets/logo-pokedex.png" alt="Logo Pokedex" id="logoHeader">
+    <div class="nav-links">
+      <span class="active">
+        Home
+      </span>
+      <span>
+        Pokédex
+      </span>
+    </div>
+  </header>
+
+  <section id="searchSection">
+    <div class="search-wrapper">
+      <input id="searchInput" type="text" placeholder="Faça uma busca pelo nome do pokémon" />
+
+      <button id="searchButton" aria-label="Buscar Pokémon">
+        <img src="./assets/search-icon.svg" alt="" />
+      </button>
+
+      <button id="filterButton" aria-label="Filtrar Pokémon">
+        <img src="./assets/filter-icon.svg" alt="" />
+      </button>
+      
+      <div class="filter-dropdown" id="filterDropdown">
+        <div class="filter-option" data-type="">Todos os tipos</div>
+        <div class="filter-option" data-type="fire">Fire</div>
+        <div class="filter-option" data-type="water">Water</div>
+        <div class="filter-option" data-type="grass">Grass</div>
+        <div class="filter-option" data-type="electric">Electric</div>
+        <div class="filter-option" data-type="bug">Bug</div>
+        <div class="filter-option" data-type="normal">Normal</div>
+        <div class="filter-option" data-type="poison">Poison</div>
+        <div class="filter-option" data-type="ground">Ground</div>
+        <div class="filter-option" data-type="fairy">Fairy</div>
+      </div>
+    </div>
+    <select id="typeFilter" style="display: none;">
+      <option value="">Filtrar por tipo</option>
+      <option value="fire">Fire</option>
+      <option value="water">Water</option>
+      <option value="grass">Grass</option>
+      <option value="electric">Electric</option>
+      <option value="bug">Bug</option>
+      <option value="normal">Normal</option>
+      <option value="poison">Poison</option>
+      <option value="ground">Ground</option>
+      <option value="fairy">Fairy</option>
+    </select>
+  </section>
+  <main>
+    <section id="pokemonList" class="pokemon-list"></section>
+    <div class="pagination">
+      <button id="prevPage" class="pagination-link">
+        <img src="./assets/arrow-left-icon.svg" alt="">
+         Anterior
+      </button>
+
+      <div class="pagination-pages">
+        <!-- Os números de página serão gerados dinamicamente pelo JavaScript -->
+      </div>
+
+      <button id="nextPage" class="pagination-link">
+        Próximo
+        <img src="./assets/arrow-right-icon.svg" alt="">
+      </button>
+    </div>
+  </main>
+
+  <script type="module" src="./scripts/main.js"></script>
+
+</body>
+
+</html>
